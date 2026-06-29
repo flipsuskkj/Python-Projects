@@ -1,5 +1,6 @@
+from abc import ABC, abstractmethod
 
-class Pessoa:
+class Pessoa(ABC):
     def __init__(self, nome: str, idade: int, id: int):
         self._nome = nome
         self._idade = idade
@@ -23,6 +24,7 @@ class Pessoa:
     def setId(self, id):
         self._id = id
 
+    @abstractmethod
     def printAttributes(self):
         print(f"Nome: {self._nome}\n"
               f"Idade: {self._idade}\n"
